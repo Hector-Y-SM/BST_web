@@ -1,4 +1,4 @@
-import { BST, Student } from "./helper/BST.js";
+import { BST, Student } from "./BST.js";
 
 const add_btn = document.getElementById('add_btn');
 const save_btn = document.getElementById('save_btn');
@@ -44,8 +44,11 @@ add_btn.addEventListener('click', () => {
 search_btn.addEventListener('click', () =>{
     studentContainer.innerHTML = ''; 
     const res = bst.search(id_inp.value);
+    console.log(res)
     if(res != null){
         print(id_inp.value, res.value)
+    } else {
+        alert('ID not registered');
     }
 })
 
